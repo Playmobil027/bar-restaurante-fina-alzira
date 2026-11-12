@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bar Restaurante Fina · Cocina casera en Alzira</title>
+<meta name="description" content="Bar Restaurante Fina, Av. Luis Suñer 17, Alzira. Menú de lunes a sábado y especialidad en all i pebre. Llama al 962 41 53 84.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bevan:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#F3EBDD; --papel:#FBF7EF; --verde:#3E6B5A; --verde-h:#2B4A3E; --turq:#5B9A97; --turq-c:#CFE1DD;
+  --terra:#B4543A; --terra-h:#8E3F2A; --tinta:#1F2A26; --pared:#E4E0D8; --wa:#127A3C;
+  --tile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' fill='%23F3EBDD'/%3E%3Cpath d='M14 0l14 14-14 14L0 14z' fill='%233E6B5A'/%3E%3Cpath d='M14 5l9 9-9 9-9-9z' fill='%23F3EBDD'/%3E%3Cpath d='M14 9l5 5-5 5-5-5z' fill='%23B4543A'/%3E%3C/svg%3E");
+  --tile-t:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' fill='%232B4A3E'/%3E%3Cpath d='M14 0l14 14-14 14L0 14z' fill='%235B9A97'/%3E%3Cpath d='M14 5l9 9-9 9-9-9z' fill='%232B4A3E'/%3E%3Cpath d='M14 9l5 5-5 5-5-5z' fill='%23B4543A'/%3E%3C/svg%3E");
+  --disp:'Bevan',Georgia,serif; --txt:'Atkinson Hyperlegible',Verdana,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--txt);font-size:17px;line-height:1.55;color:var(--tinta);background:var(--crema);padding-bottom:64px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.band{height:28px;background:var(--tile) 0 0/28px 28px repeat-x}
+.band.t{background-image:var(--tile-t)}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1}
+.edit{}
+body.ver-editables .edit{background:#FFE45C;outline:2px dashed #C99A00;outline-offset:2px;color:#000}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:.6em 1.3em;font:700 1rem/1.1 var(--txt);text-decoration:none;border:2.5px solid var(--tinta);background:var(--terra);color:#fff;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:4px 4px 0 var(--tinta)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--tinta)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--tinta)}
+.btn.wa{background:var(--wa)}
+.btn.claro{background:var(--papel);color:var(--tinta)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* cabecera */
+header{position:sticky;top:0;z-index:20;background:var(--papel);border-bottom:2.5px solid var(--tinta)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font-family:var(--disp);font-size:1.25rem;text-decoration:none;color:var(--verde-h);letter-spacing:.02em;white-space:nowrap}
+.logo b{color:var(--terra);font-weight:400}
+nav{display:none;gap:22px}
+nav a{text-decoration:none;font-weight:700;font-size:.95rem}
+nav a:hover{color:var(--terra)}
+header .btn{min-height:42px;padding:.4em 1em;font-size:.92rem;box-shadow:3px 3px 0 var(--tinta)}
+
+/* hero */
+.hero{position:relative;background:var(--pared);overflow:hidden}
+.hero .wrap{display:grid;gap:26px;padding:34px 0 52px}
+.hero .wrap>*{min-width:0}
+.hero .texto{display:grid;gap:22px;justify-items:start}
+.placa{background:var(--tile) 0 0/22px 22px;padding:11px;width:fit-content;max-width:100%;box-shadow:6px 6px 0 var(--verde-h)}
+.placa div{background:var(--crema);padding:14px 16px 12px;text-align:center}
+.placa h1{font-size:clamp(2.7rem,12.6vw,5.6rem);color:var(--verde);letter-spacing:.015em;line-height:.9}
+.placa h1 i{font-style:normal;color:var(--terra);font-size:.55em;vertical-align:.18em;padding:0 .08em}
+.placa small{display:block;font:700 .82rem/1 var(--txt);letter-spacing:.14em;color:var(--verde-h);margin-top:8px;text-transform:uppercase}
+.hero .lema{font-family:var(--disp);font-size:clamp(1.5rem,5.4vw,2.6rem);line-height:1.08;max-width:15em}
+.hero .lema em{font-style:normal;color:var(--terra)}
+.hero .sub{max-width:32em;font-size:1.05rem}
+.estado{display:inline-flex;align-items:center;gap:10px;background:var(--papel);border:2.5px solid var(--tinta);padding:.45em .9em;font-weight:700;font-size:.95rem;width:fit-content}
+.estado i{width:12px;height:12px;border-radius:50%;background:#999;flex:none}
+.estado.abierto i{background:#1E9E55;box-shadow:0 0 0 3px #bfe8cf}
+.estado.cerrado i{background:var(--terra)}
+.acciones{display:flex;flex-wrap:wrap;gap:14px}
+.foto-hero{position:relative;margin:0}
+.foto-hero img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 38%;border:2.5px solid var(--tinta)}
+.sello{position:absolute;right:10px;top:-18px;transform:rotate(8deg);background:var(--terra);color:#fff;border:2.5px solid var(--tinta);padding:10px 14px;text-align:center;font-family:var(--disp);line-height:1;box-shadow:3px 3px 0 var(--tinta)}
+.sello b{display:block;font-weight:400;font-size:2.2rem}
+.sello span{font:700 .72rem/1.1 var(--txt)}
+
+/* cifras */
+.cifras{background:var(--verde);color:var(--crema)}
+.cifras .wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;padding:26px 0}
+.cifras div{border-left:3px solid var(--turq);padding-left:12px}
+.cifras strong{display:block;font-family:var(--disp);font-weight:400;font-size:2rem;line-height:1}
+.cifras span{font-size:.92rem;opacity:.9}
+
+/* all i pebre */
+.estrella{background:var(--terra);color:var(--crema);position:relative;overflow:hidden;padding:58px 0 64px}
+.estrella .wrap{display:grid;gap:22px}
+.estrella .peq{font:700 1rem/1.3 var(--txt);max-width:24em}
+.estrella h2{font-size:clamp(4.2rem,23vw,13rem);line-height:.82;letter-spacing:-.01em;color:var(--papel);margin-left:-.04em}
+.estrella h2 span{display:block}
+.estrella h2 span:nth-child(2){color:var(--tinta);margin-left:.6em}
+.estrella h2 span:nth-child(3){margin-left:.18em}
+.estrella p{max-width:30em;font-size:1.05rem}
+.estrella .btn{background:var(--papel);color:var(--tinta);width:fit-content}
+.estrella::after{content:"";position:absolute;inset:auto 0 0 0;height:14px;background:var(--tile-t) 0 0/28px 28px repeat-x;opacity:.0}
+
+/* menú */
+.menu{padding:64px 0 24px}
+.menu .wrap{display:grid;gap:34px}
+.menu h2,.carta h2,.pasos h2,.opi h2,.galeria h2,.donde h2{font-size:clamp(2.2rem,8.5vw,4rem)}
+.menu .intro{max-width:30em}
+.pizarra{background:var(--verde-h);color:var(--crema);padding:12px;box-shadow:7px 7px 0 var(--tinta);border:2.5px solid var(--tinta);width:min(100%,460px);justify-self:start}
+.pizarra .in{border:2px dashed rgba(243,235,221,.55);padding:22px 20px 24px}
+.pizarra h3{font-size:1.7rem;color:var(--crema)}
+.pizarra .dias{font-weight:700;color:var(--turq-c);margin:4px 0 14px;font-size:.95rem}
+.pizarra ul{list-style:none;padding:0;display:grid;gap:10px}
+.pizarra li{display:flex;gap:10px;align-items:baseline;border-bottom:1px dotted rgba(243,235,221,.4);padding-bottom:9px}
+.pizarra li b{font-family:var(--disp);font-weight:400;color:#F4C9A8;min-width:5.4em}
+.precio{display:flex;align-items:baseline;gap:12px;margin-top:18px}
+.precio strong{white-space:nowrap;font-family:var(--disp);font-weight:400;font-size:3.6rem;line-height:1;color:#fff}
+.precio span{font-size:.9rem;line-height:1.3}
+
+/* carta de fotos */
+.carta{padding:36px 0 70px}
+.carta .wrap{display:grid;gap:20px}
+.carta .cab{display:grid;gap:8px}
+.azulejos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.az{position:relative;margin:0;background:var(--tile) 0 0/22px 22px;padding:9px}
+.az img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;border:2px solid var(--tinta)}
+.az figcaption{position:absolute;left:0;bottom:18px;background:var(--papel);border:2.5px solid var(--tinta);border-left:0;padding:.3em .8em .3em .9em;font-family:var(--disp);font-size:1rem;max-width:88%}
+.az.ancho{grid-column:1/-1}
+.az-txt{display:grid;gap:14px;align-content:start;grid-column:1/-1}
+.az-txt p{max-width:24em}
+.az.ancho img{aspect-ratio:16/9}
+.az.desf{margin-top:28px}
+.aviso-precios{font-size:.92rem;max-width:34em}
+
+/* pasos */
+.pasos{background:var(--turq-c);padding:64px 0 70px;border-block:2.5px solid var(--tinta)}
+.pasos .wrap{display:grid;gap:26px}
+.pasos ol{list-style:none;padding:0;display:grid;gap:18px}
+.pasos li{background:var(--papel);border:2.5px solid var(--tinta);padding:18px 20px 20px 74px;position:relative;box-shadow:5px 5px 0 var(--tinta)}
+.pasos li::before{content:counter(p);counter-increment:p;position:absolute;left:0;top:0;bottom:0;width:54px;display:grid;place-items:center;background:var(--terra);color:#fff;font-family:var(--disp);font-size:1.9rem;border-right:2.5px solid var(--tinta)}
+.pasos ol{counter-reset:p}
+.pasos li h3{font-size:1.25rem;margin-bottom:4px}
+.pasos li:nth-child(2){margin-left:0}
+
+/* opiniones */
+.opi{padding:70px 0 54px}
+.opi .wrap{display:grid;gap:26px}
+.nota{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nota strong{font-family:var(--disp);font-weight:400;font-size:clamp(4rem,18vw,7rem);line-height:.9;color:var(--verde)}
+.estrellas{color:var(--terra);font-size:1.6rem;letter-spacing:.1em;line-height:1}
+.nota small{display:block;font-size:.92rem}
+.grande{font-family:var(--disp);font-size:clamp(1.5rem,5.6vw,2.5rem);line-height:1.18;border-left:8px solid var(--terra);padding-left:18px;max-width:22em}
+.grande cite,.menor cite{display:block;font:700 .85rem/1.3 var(--txt);margin-top:12px;font-style:normal;color:var(--verde-h)}
+.menores{display:grid;gap:16px}
+.menor{background:var(--papel);border:2.5px solid var(--tinta);padding:18px 20px}
+.menor p{font-size:1.05rem}
+.menor:nth-child(2){transform:rotate(-.8deg)}
+
+/* galería */
+.galeria{background:var(--tinta);color:var(--crema);padding:64px 0 70px}
+.galeria .wrap{display:grid;gap:24px}
+.galeria p{max-width:30em}
+.galeria .btn{width:fit-content;background:var(--turq);color:var(--tinta);border-color:var(--crema);box-shadow:4px 4px 0 var(--crema)}
+.collage{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:110px;gap:8px}
+.collage img{width:100%;height:100%;object-fit:cover;border:2px solid var(--crema)}
+.collage .a{grid-column:span 2;grid-row:span 2}
+.collage .b{grid-row:span 2}
+
+/* dónde */
+.donde{padding:70px 0 40px}
+.donde .wrap{display:grid;gap:30px}
+.fachada-dato{display:grid;gap:6px}
+.dir{font-family:var(--disp);font-size:1.5rem;line-height:1.15}
+.tel{font-family:var(--disp);font-size:clamp(2.1rem,9vw,3.4rem);line-height:1;color:var(--terra);text-decoration:none}
+.horario{list-style:none;padding:0;border:2.5px solid var(--tinta);background:var(--papel)}
+.horario li{display:flex;justify-content:space-between;gap:12px;padding:11px 16px;border-bottom:1.5px dotted #9a9a8f}
+.horario li:last-child{border-bottom:0}
+.horario li.hoy{background:var(--verde);color:#fff;font-weight:700}
+.horario li.hoy span:first-child::after{content:"hoy";font:700 .75rem/1 var(--txt);background:var(--crema);color:var(--tinta);padding:3px 7px;margin-left:10px}
+.horario li span:first-child{min-width:6.5em}
+.mapa{border:2.5px solid var(--tinta);box-shadow:6px 6px 0 var(--verde);background:var(--pared)}
+.mapa iframe{display:block;width:100%;height:340px;border:0}
+.wa-grande{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* pie */
+footer{background:var(--verde-h);color:var(--crema);padding:44px 0 30px;margin-top:40px}
+footer .wrap{display:grid;gap:18px}
+footer .logo{color:var(--crema);font-size:1.6rem}
+footer a{color:var(--turq-c)}
+footer ul{list-style:none;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+footer small{opacity:.75}
+
+/* barra fija móvil */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1.4fr;gap:0;border-top:2.5px solid var(--tinta);background:var(--papel)}
+.barra a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;font-weight:700;text-decoration:none}
+.barra a:first-child{background:var(--papel)}
+.barra a:last-child{background:var(--wa);color:#fff;border-left:2.5px solid var(--tinta)}
+.barra svg{width:20px;height:20px}
+
+/* franja dueño */
+.dueno{background:#fff;color:#111;border-top:6px solid #111;padding:40px 0 100px;font-family:system-ui,sans-serif}
+.dueno .wrap{display:grid;gap:16px}
+.dueno h2{font:700 1.4rem/1.2 system-ui,sans-serif}
+.dueno .marca{display:inline-block;background:#111;color:#fff;padding:4px 10px;font:700 .85rem/1.3 system-ui,sans-serif;width:fit-content}
+.dueno ul{padding-left:1.1em;display:grid;gap:10px}
+.dueno button{font:700 1rem system-ui,sans-serif;padding:12px 18px;border:2px solid #111;background:#FFE45C;cursor:pointer;width:fit-content}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .barra{display:none}
+  nav{display:flex}
+  .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;gap:48px;padding:56px 0 76px}
+  .foto-hero{margin-right:-40px}
+  .foto-hero img{aspect-ratio:4/5;object-position:30% 50%}
+  .cifras .wrap{grid-template-columns:repeat(4,1fr)}
+  .estrella .wrap{align-items:end;gap:20px 60px}
+  .estrella .peq,.estrella h2{grid-column:1/-1}
+  .estrella h2{display:flex;align-items:baseline;gap:.22em;font-size:min(13.5vw,12.5rem);line-height:.9;white-space:nowrap}
+  .estrella h2 span,.estrella h2 span:nth-child(2),.estrella h2 span:nth-child(3){margin-left:0}
+  .estrella .wrap{grid-template-columns:1fr 1fr}
+  .menu .wrap{grid-template-columns:1fr 1fr;align-items:start;gap:60px}
+  .menu .intro-col{display:grid;gap:18px;padding-top:12px}
+  .azulejos{grid-template-columns:repeat(6,1fr);gap:18px}
+  .az{grid-column:span 2}
+  .az.ancho{grid-column:span 6}
+  .az.ancho img{aspect-ratio:21/9}
+  .az-txt{grid-column:span 2;align-self:end;padding-bottom:20px}
+  .az.desf{margin-top:46px}
+  .carta .cab{grid-template-columns:1fr 1fr;align-items:end}
+  .pasos ol{grid-template-columns:repeat(3,1fr);align-items:start}
+  .pasos li:nth-child(2){margin-top:34px}
+  .pasos li:nth-child(3){margin-top:68px}
+  .pasos li{padding:20px 20px 22px;padding-top:78px}
+  .pasos li::before{width:100%;height:56px;bottom:auto;right:0;border-right:0;border-bottom:2.5px solid var(--tinta);justify-content:start;padding-left:20px;place-items:center start}
+  .opi .wrap{grid-template-columns:.8fr 1.2fr;gap:30px 60px;align-items:start}
+  .opi .cab{grid-column:1}
+  .opi .menores{grid-column:2;grid-template-columns:1fr 1fr}
+  .opi .grande{grid-column:2;grid-row:1}
+  .galeria .wrap{grid-template-columns:.7fr 1.3fr;align-items:center;gap:50px}
+  .collage{grid-auto-rows:150px}
+  .donde .wrap{grid-template-columns:1fr 1fr;gap:34px 60px}
+  .donde .mapa{grid-column:1/-1}
+  .mapa iframe{height:380px}
+}
+@media (min-width:1000px){.foto-hero{margin-right:-90px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Bar Restaurante Fina, inicio">Casa <b>×</b> Fina</a>
+    <nav aria-label="Principal">
+      <a href="#pebre">All i pebre</a>
+      <a href="#menu">Menú</a>
+      <a href="#reservar">Reservar</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#donde">Dónde</a>
+    </nav>
+    <a class="btn" href="tel:+34962415384">Llamar</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="band"></div>
+  <div class="wrap">
+    <div class="texto">
+      <div class="placa"><div>
+        <h1>Casa<i>×</i>Fina</h1>
+        <small>Bar Restaurante · Alzira</small>
+      </div></div>
+      <p class="lema">Comida de casa, en la mesa, de lunes a sábado. <em>Y el all i pebre.</em></p>
+      <p class="sub">Menú de lunes a sábado en la Avenida Luis Suñer. Pasa, siéntate y pregunta qué hay hoy en la pizarra.</p>
+      <p class="estado" id="estado" role="status"><i></i><span>Comprobando horario…</span></p>
+      <div class="acciones">
+        <a class="btn wa" href="https://wa.me/34962415384?text=Hola%2C%20quiero%20reservar%20mesa%20en%20el%20Bar%20Restaurante%20Fina." id="wa-hero"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.400 0 .5l-.4.600-.3.300c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.400.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.200Z"/></svg>Reservar mesa</a>
+        <a class="btn claro" href="tel:+34962415384">962 41 53 84</a>
+      </div>
+    </div>
+    <figure class="foto-hero">
+      <img src="img/salon.jpg" alt="Comedor del Bar Restaurante Fina con mesas de mantel blanco y el panel de azulejos Casa Fina al fondo" width="720" height="720">
+      <div class="sello" aria-label="Valoración en Google 4,3"><b>4,3</b><span>en Google<br>580 reseñas</span></div>
+    </figure>
+  </div>
+  <div class="band t"></div>
+</section>
+
+<section class="cifras" aria-label="Datos del bar">
+  <div class="wrap">
+    <div><strong>4,3</strong><span>valoración en Google</span></div>
+    <div><strong>580</strong><span>reseñas de clientes</span></div>
+    <div><strong>L a S</strong><span>menú de lunes a sábado</span></div>
+    <div><strong>Av. Suñer 17</strong><span>en Alzira</span></div>
+  </div>
+</section>
+
+<section class="estrella" id="pebre">
+  <div class="wrap">
+    <p class="peq">La especialidad de la casa</p>
+    <h2><span>All</span><span>i</span><span>pebre</span></h2>
+    <div>
+      <p>Así lo dice el bar en su Facebook: especialidad en all i pebre. Escríbenos y pregunta si hoy está en la pizarra.</p>
+      <p style="margin-top:18px"><a class="btn" href="https://wa.me/34962415384?text=Hola%2C%20%C2%BFhoy%20hay%20all%20i%20pebre%3F" id="wa-pebre">¿Hoy hay all i pebre?</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="intro-col">
+      <h2>El menú de lunes a sábado</h2>
+      <p class="intro">Menú de lunes a sábados con cocina casera. Cada día cambia lo que sale de la cocina, así que lo mejor es mirar la pizarra o preguntar.</p>
+      <p class="aviso-precios"><span class="edit">Precio y composición del menú de ejemplo: a confirmar con el bar.</span></p>
+    </div>
+    <div class="pizarra">
+      <div class="in">
+        <h3>Menú del día</h3>
+        <p class="dias">De lunes a sábado</p>
+        <ul class="edit">
+          <li><b>Primeros</b><span>Varios para elegir</span></li>
+          <li><b>Segundos</b><span>Cocina casera del día</span></li>
+          <li><b>Postre</b><span>O café</span></li>
+          <li><b>Bebida</b><span>Y pan incluidos</span></li>
+        </ul>
+        <div class="precio"><strong class="edit">12 €</strong><span>IVA incluido.<br>Pregunta por el menú de hoy.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="carta">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Platos para pedir sin menú</h2>
+      <p class="aviso-precios">Algunos de los platos que salen de su cocina.</p>
+    </div>
+    <div class="azulejos">
+      <figure class="az"><img src="img/pulpo.jpg" alt="Pulpo asado sobre crema anaranjada y salsa negra en plato de pizarra" loading="lazy"><figcaption>Pulpo</figcaption></figure>
+      <figure class="az desf"><img src="img/ensalada.jpg" alt="Ensalada con queso fresco y vinagre balsámico en plato azul" loading="lazy"><figcaption>Ensalada con queso</figcaption></figure>
+      <div class="az-txt"><p>Precios y raciones: pregunta en barra, por teléfono o por WhatsApp.</p><a class="btn wa" href="https://wa.me/34962415384?text=Hola%2C%20%C2%BFqu%C3%A9%20platos%20ten%C3%A9is%20hoy%3F" id="wa-carta">Preguntar qué hay hoy</a></div>
+      <figure class="az ancho"><img src="img/calamares.jpg" alt="Bandeja de calamares y chipirones fritos junto a otra de patatas" loading="lazy"><figcaption>Fritos de barra</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pasos" id="reservar">
+  <div class="wrap">
+    <h2>Reservar, en tres pasos</h2>
+    <ol>
+      <li><h3>Elige día y hora</h3><p>Elige si vas a comer con el menú o a pedir tus platos de siempre.</p></li>
+      <li><h3>Escribe o llama</h3><p>Por WhatsApp con el mensaje ya escrito, o al 962 41 53 84. Sin aplicaciones ni comisiones.</p></li>
+      <li><h3>Ven y siéntate</h3><p>Avenida Luis Suñer 17. El mantel ya está puesto.</p></li>
+    </ol>
+    <div class="acciones">
+      <a class="btn wa" href="https://wa.me/34962415384?text=Hola%2C%20quiero%20reservar%20mesa%20en%20el%20Bar%20Restaurante%20Fina." id="wa-pasos">Reservar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="opi" id="opiniones">
+  <div class="wrap">
+    <div class="cab nota">
+      <strong>4,3</strong>
+      <div><div class="estrellas" aria-label="4,3 de 5 estrellas">★★★★☆</div><small>580 reseñas en Google</small></div>
+    </div>
+    <blockquote class="grande edit">“La comida está super top, me ha encantado todo. Muchas gracias por la atención y receptividad, además muy majos.”<cite>Reseña de cliente, Tripadvisor</cite></blockquote>
+    <div class="menores">
+      <blockquote class="menor edit"><p>“Local de comida casera con un excelente menú y un personal muy atento.”</p><cite>Reseña de cliente</cite></blockquote>
+      <blockquote class="menor edit"><p>“Buena comida y servicio ágil y atento. Merece la pena probar y repetir.”</p><cite>Reseña de cliente</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="galeria">
+  <div class="wrap">
+    <div>
+      <h2>El bar por dentro</h2>
+      <p style="margin:14px 0 22px">Barra, salón, el panel de azulejos de la entrada y los platos del día. Más de dos mil publicaciones en su Instagram.</p>
+      <a class="btn" href="https://www.instagram.com/bar_restaurantefina/" target="_blank" rel="noopener">Síguenos en Instagram</a>
+    </div>
+    <div class="collage">
+      <img class="a" src="img/mosaico.jpg" alt="Panel de azulejos con el rótulo Casa Fina en la pared del comedor" loading="lazy">
+      <img src="img/pulpo.jpg" alt="Pulpo asado con salsa negra" loading="lazy">
+      <img src="img/ensalada.jpg" alt="Ensalada con balsámico" loading="lazy">
+      <img src="img/barra.jpg" alt="Barra del bar con cervezas y copas al fondo" loading="lazy">
+      <img src="img/calamares.jpg" alt="Fritos en bandeja" loading="lazy">
+      <img src="img/salon.jpg" alt="Salón con mesas puestas" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="donde" id="donde">
+  <div class="band" style="margin-bottom:60px"></div>
+  <div class="wrap">
+    <div class="fachada-dato">
+      <h2>Aquí, en Alzira</h2>
+      <p class="dir">Av. Luis Suñer, 17<br>46600 Alzira, Valencia</p>
+      <a class="tel" href="tel:+34962415384">962 41 53 84</a>
+      <div class="wa-grande" style="margin-top:12px">
+        <a class="btn wa" href="https://wa.me/34962415384?text=Hola%2C%20quiero%20hacer%20una%20consulta%20al%20Bar%20Restaurante%20Fina." id="wa-donde">Escribir por WhatsApp</a>
+        <span class="edit" style="font-size:.88rem">Número de WhatsApp por confirmar (es un fijo)</span>
+      </div>
+    </div>
+    <ul class="horario edit" id="horario" aria-label="Horario">
+      <li data-d="1"><span>Lunes</span><span>7:00 – 16:30</span></li>
+      <li data-d="2"><span>Martes</span><span>7:00 – 16:30</span></li>
+      <li data-d="3"><span>Miércoles</span><span>7:00 – 16:30</span></li>
+      <li data-d="4"><span>Jueves</span><span>7:00 – 16:30</span></li>
+      <li data-d="5"><span>Viernes</span><span>7:00 – 16:30</span></li>
+      <li data-d="6"><span>Sábado</span><span>8:00 – 16:30</span></li>
+      <li data-d="0"><span>Domingo</span><span>Cerrado</span></li>
+    </ul>
+    <div class="mapa"><iframe title="Mapa de Bar Restaurante Fina en Alzira" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Bar+Restaurante+Fina+Avenida+Luis+Su%C3%B1er+17+Alzira&output=embed"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top">Casa × Fina</a>
+    <p>Bar Restaurante Fina · Av. Luis Suñer 17, Alzira<br>Menú de lunes a sábado. Especialidad en all i pebre.</p>
+    <ul>
+      <li><a href="https://www.instagram.com/bar_restaurantefina/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/BarFina/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=Bar+Restaurante+Fina+Alzira" target="_blank" rel="noopener">Google Maps</a></li>
+    </ul>
+    <small>Aviso legal · Privacidad · Cookies</small>
+  </div>
+</footer>
+
+<section class="dueno">
+  <div class="wrap">
+    <span class="marca">Esta franja no aparece en la web publicada</span>
+    <h2>Para el bar: lo que os aporta una web propia</h2>
+    <ul>
+      <li>Reservas y consultas directas por teléfono o WhatsApp, sin comisiones de plataformas.</li>
+      <li>Salir mejor en Google y Maps cuando alguien busca "restaurante en Alzira" o "menú del día en Alzira".</li>
+      <li>El menú y el horario se cambian en un minuto, y el all i pebre tiene su sitio fijo en la portada.</li>
+      <li>Vuestro 4,3 y las 580 reseñas de Google, presentados con una imagen cuidada, y los azulejos de Casa Fina como seña de identidad.</li>
+    </ul>
+    <button type="button" id="resaltar">Resaltar datos a confirmar</button>
+  </div>
+</section>
+
+<nav class="barra" aria-label="Acciones rápidas">
+  <a href="tel:+34962415384">Llamar</a>
+  <a href="https://wa.me/34962415384?text=Hola%2C%20quiero%20reservar%20mesa%20en%20el%20Bar%20Restaurante%20Fina.">Reservar</a>
+</nav>
+
+<script>
+(function(){
+  // horario [apertura, cierre] en minutos; null = cerrado (domingo=0)
+  var H={0:null,1:[420,990],2:[420,990],3:[420,990],4:[420,990],5:[420,990],6:[480,990]};
+  var D=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  function ahora(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];
+    return {d:wd,m:(+o.hour%24)*60+(+o.minute)};
+  }
+  function fmt(m){return Math.floor(m/60)+':'+('0'+m%60).slice(-2)}
+  function pinta(){
+    var n=ahora(),h=H[n.d],el=document.getElementById('estado'),t;
+    el.className='estado';
+    if(h&&n.m>=h[0]&&n.m<h[1]){el.classList.add('abierto');t='Abierto ahora · cerramos a las '+fmt(h[1])}
+    else if(h&&n.m<h[0]){el.classList.add('cerrado');t='Cerrado · abrimos hoy a las '+fmt(h[0])}
+    else{
+      var s=1,dd;for(;s<=7;s++){dd=(n.d+s)%7;if(H[dd])break}
+      el.classList.add('cerrado');t='Cerrado · abrimos '+(s===1?'mañana':'el '+D[dd])+' a las '+fmt(H[dd][0]);
+    }
+    el.lastElementChild.textContent=t;
+    document.querySelectorAll('#horario li').forEach(function(li){li.classList.toggle('hoy',+li.dataset.d===n.d)});
+  }
+  pinta();setInterval(pinta,60000);
+  document.getElementById('resaltar').addEventListener('click',function(){
+    var on=document.body.classList.toggle('ver-editables');
+    this.textContent=on?'Quitar resaltado':'Resaltar datos a confirmar';
+  });
+})();
+</script>
+</body>
+</html>
